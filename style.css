@@ -1,0 +1,219 @@
+/*
+How to make a responsive navbar:
+https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+
+To understand this better.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+*{
+	font-family: Montserrat;
+}
+
+.box-1{
+	height: 100vh;
+	background:
+		linear-gradient(
+			rgba(50, 50, 50, 0.7),
+			rgba(50, 50, 50, 0.7)
+		), 
+		url('office-desk.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	text-align: center;
+	padding-bottom: 10vh;
+	margin: 0;	/*This does not work. How to remove white space around this box?*/
+}
+
+.box-1top{
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: rgba(30, 30, 30, 0.5);
+	font-weight: 700;
+	padding: 1em;
+	justify-content: space-between;
+}
+
+#logo {
+	flex: auto;
+	text-align: left;
+}
+
+#navbar {
+	flex: auto;
+	text-align: right;
+}
+
+#navbar ul{
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+#navbar li{
+	display: inline;
+}
+
+#navbar a{
+	color: white;
+	text-decoration: none;
+	padding-right:  20px;
+}
+
+#ellipsis {
+	font-size: 30px;
+	display: none;
+}
+
+.box-1 h1{
+	font-weight: 1000;
+	padding-top: 10vh;
+}
+
+.box-1 p{
+	font-size: 12px;
+	padding: 0 10%;
+	padding-bottom: 30px;
+}
+
+.button1{
+	font-size: 15px;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	font-weight: 700;
+	text-decoration: none;
+	border: 2px white solid;
+	padding: 8px 20px;
+	margin: 10px;
+	/* How to make buttons of equal width? Width does not work. */
+}
+
+.button1:hover{
+	background-color: white;
+	color: black;
+}
+
+.box-2{
+	background-color: white;
+	color: black;
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 30%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.box-2 h1{
+	font-weight: 1000;
+}
+
+.box-2bottom{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.box-2bottom p{
+	font-size: 12px;
+	padding: 5px;
+	padding-bottom: 30px;
+}
+
+.bottomflex{
+	flex: auto;
+	border: 1px solid black;
+	padding: 10px 5px;
+	margin: 30px;
+}
+
+.button2{
+	font-size: 15px;
+	color: black;
+	font-weight: 700;
+	text-decoration: none;
+	border: 2px solid black;
+	padding: 8px 20px;
+	margin-bottom: 20px;  /*Why does this line not work?*/
+}
+
+.button2:hover{
+	color: white;
+	background-color: black;
+}
+
+#main-footer{
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: black;
+	padding: 3em;
+	color: white;
+	font-size: 15px;
+	justify-content: space-between;
+}
+
+.footer1 .footer2{
+	flex: auto;
+}
+
+#main-footer ul{
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+#main-footer li{
+	display: inline;
+	font-size: 25px;
+	padding: 0;
+}
+
+#main-footer a{
+	margin: 0 20px;
+	text-decoration: none;
+	padding: 0;
+}
+
+.insta-icon{
+	color: #BC2A8D;
+}
+
+.linkedin-icon{
+	color: black;
+	background-color: #0E76A8;
+	border: 1px solid #0E76A8;
+	border-radius: 3px;
+	padding: 0; /* How to get rid off the extra bottom padding on the logo? */
+}
+
+.twitter-icon{
+	color: #00ACEE;
+	/* How to make the middle of the icon black? */
+}
+
+@media(max-width: 600px){
+	#ellipsis{
+		display: inline;
+	}
+
+	.menu-item{
+		display: none;
+	}
+	
+	.button1{
+		display: block;
+		width: 80%;
+		margin-left: 5%;
+		/* Why is margin-left: 5% needed to center the buttons? */
+	}
+
+	.box-2bottom{
+		flex-direction: column;
+	}
+
+	.main-footer{
+		flex-direction: column;
+		/* Why does this not stack up the flex items? */
+	}
+}
